@@ -841,6 +841,7 @@ export interface ApiPagePage extends Schema.SingleType {
       'api::category.category'
     >;
     pageFooter: Attribute.Component<'layout.footer'>;
+    pageLogo: Attribute.Component<'layout.logo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
