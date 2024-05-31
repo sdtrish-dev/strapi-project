@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_block_two_column_text_images",
+  "info": {
+    "displayName": "Two Column Text Image",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "flip": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_footers",
+  "info": {
+    "displayName": "footer",
+    "icon": "arrowDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    },
+    "menuLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.menu-links"
+    },
+    "footerLogo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.logo"
+    }
+  }
+}

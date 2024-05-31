@@ -16,7 +16,8 @@
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
     "content": {
       "type": "text"
@@ -24,13 +25,15 @@
     "seo_meta": {
       "type": "json"
     },
-    "components": {
+    "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::component.component"
+      "target": "api::category.category"
     },
-    "categories": {
-      "type": "json"
+    "pageFooter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.footer"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_logos",
+  "info": {
+    "displayName": "logo",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "logoImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "logoText": {
+      "type": "string"
+    }
+  }
+}
