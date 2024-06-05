@@ -793,14 +793,20 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: 'Categories';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    slug: Attribute.UID<'api::category.category', 'name'>;
+    slug: Attribute.String;
+    posts: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -857,7 +863,7 @@ export interface ApiPostPost extends Schema.CollectionType {
   info: {
     singularName: 'post';
     pluralName: 'posts';
-    displayName: 'Post';
+    displayName: 'Posts';
     description: '';
   };
   options: {
@@ -867,7 +873,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     title: Attribute.String;
     categories: Attribute.Relation<
       'api::post.post',
-      'oneToMany',
+      'manyToMany',
       'api::category.category'
     >;
     slug: Attribute.UID<'api::post.post', 'title'>;
