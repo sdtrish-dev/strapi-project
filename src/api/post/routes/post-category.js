@@ -5,7 +5,7 @@ module.exports = {
       path: "/posts/category/:category",
       handler: "post-category.findByCategory",
       config: {
-        auth: false, // Adjust this according to your needs
+        auth: false,
       },
     },
   ],
