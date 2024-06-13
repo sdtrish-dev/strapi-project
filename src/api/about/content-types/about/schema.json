@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.hero"
+    },
+    "content": {
+      "type": "text"
+    },
+    "twoColAbout": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block.two-column-text-image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
