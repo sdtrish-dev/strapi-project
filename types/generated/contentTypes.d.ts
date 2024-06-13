@@ -793,7 +793,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   info: {
     singularName: 'about';
     pluralName: 'abouts';
-    displayName: 'About';
+    displayName: 'About Page';
     description: '';
   };
   options: {
@@ -865,7 +865,7 @@ export interface ApiContactContact extends Schema.SingleType {
   info: {
     singularName: 'contact';
     pluralName: 'contacts';
-    displayName: 'Contact';
+    displayName: 'Contact Page';
     description: '';
   };
   options: {
@@ -873,7 +873,6 @@ export interface ApiContactContact extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    email: Attribute.Email;
     contactSlider: Attribute.Component<'block.slider'>;
     content: Attribute.Text;
     slug: Attribute.UID<'api::contact.contact', 'title'>;
@@ -895,12 +894,45 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiMessageMessage extends Schema.CollectionType {
+  collectionName: 'messages';
+  info: {
+    singularName: 'message';
+    pluralName: 'messages';
+    displayName: 'Message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.String;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::message.message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.SingleType {
   collectionName: 'pages';
   info: {
     singularName: 'page';
     pluralName: 'pages';
-    displayName: 'Page';
+    displayName: 'Home Page';
     description: '';
   };
   options: {
@@ -980,6 +1012,7 @@ declare module '@strapi/types' {
       'api::about.about': ApiAboutAbout;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::message.message': ApiMessageMessage;
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
     }

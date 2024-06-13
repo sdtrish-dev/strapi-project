@@ -4,7 +4,7 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contact",
+    "displayName": "Contact Page",
     "description": ""
   },
   "options": {
@@ -14,9 +14,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "email": {
-      "type": "email"
     },
     "contactSlider": {
       "type": "component",
